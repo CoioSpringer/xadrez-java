@@ -13,11 +13,16 @@ public class Tabuleiro {
 	}
 	
 	public Peca peca(int linha, int coluna) {
-		return pecas[linha][coluna];
+		return this.pecas[linha][coluna];
 	}
 	
 	public Peca peca(Position posicao) {
-		return pecas[posicao.getLinha()][posicao.getColuna()];
+		return this.pecas[posicao.getLinha()][posicao.getColuna()];
+	}
+	
+	public void colocarPeca(Peca peca, Position posicao) {
+		this.pecas[posicao.getLinha()][posicao.getColuna()] = peca;
+		peca.position = posicao;
 	}
 
 	public int getLinhas() {
